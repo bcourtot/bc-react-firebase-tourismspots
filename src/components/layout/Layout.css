@@ -1,6 +1,7 @@
 .header {
     background-color: snow;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    z-index: 999;
 }
 
 .header-navbar {
@@ -27,10 +28,9 @@
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    background-color: aqua;
+    color: #333;
+    background-color: snow;
     height: 10vh;
     text-align: center;
     align-items: center;

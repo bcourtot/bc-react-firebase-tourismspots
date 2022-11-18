@@ -1,18 +1,51 @@
-import React from 'react'
+import React from 'react';
+import { Fade } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
 
 const Carousel = () =>
 {
+    const fadeImages = [
+        {
+            url: './img/newcaledonia1.jpg',
+            caption: 'Slide 1'
+        },
+        {
+            url: './img/newcaledonia2.jpg',
+            caption: 'Slide 2'
+        },
+        {
+            url: './img/newcaledonia3.jpg',
+            caption: 'Slide 3'
+        },
+        {
+            url: './img/newcaledonia4.jpg',
+            caption: 'Slide 4'
+        },
+        {
+            url: './img/newcaledonia5.jpg',
+            caption: 'Slide 5'
+        },
+        {
+            url: './img/newcaledonia6.jpg',
+            caption: 'Slide 6'
+        },
+    ];
+
     return (
         <>
-            <section class="pic-ctn">
-                <img src="./img/newcaledonia2.jpg" alt="nouvelle calédonie tortue" class="pic" />
-                <img src="./img/newcaledonia1.jpg" alt="nouvelle calédonie plage" class="pic" />
-                <img src="./img/newcaledonia3.jpg" alt="nouvelle calédonie plongeur" class="pic" />
-                <img src="./img/newcaledonia4.jpg" alt="nouvelle calédonie récif" class="pic" />
-                <img src="./img/newcaledonia5.jpg" alt="nouvelle calédonie phare amédée" class="pic" />
+            <section className="slide-container">
+                <Fade>
+                    {fadeImages.map((fadeImage, index) => (
+                        <div className="each-fade" key={index}>
+                            <div className="image-container">
+                                <img src={fadeImage.url} className="w-100" alt={fadeImage.caption} />
+                            </div>
+                        </div>
+                    ))}
+                </Fade>
             </section>
         </>
     )
 }
 
-export default Carousel
+export default Carousel;

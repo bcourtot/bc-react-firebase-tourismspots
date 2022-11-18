@@ -1,5 +1,6 @@
-import '../Pages.css';
 import Carousel from '../../partials/Carousel';
+import '../Pages.css';
+
 
 
 const Home = () =>
@@ -22,14 +23,13 @@ const Home = () =>
             <figcaption className="citation-source">—Wikipedia, <cite>Nouvelle-Calédonie</cite></figcaption>
           </figure>
         </section>
-        <section className="d-flex mt mb">
+        <section className="d-flex mt">
           <div className="bg-image-book align-center w-100 h-50 home-cta">
-            <h3 className="title">Réservez vite votre <br></br><span className="home-cta-span">billet d'avion !</span></h3>
+            <h3 className="title">Réservez tout de suite votre <br></br><span className="home-cta-span">billet d'avion !</span></h3>
             <a href="https://www.aircalin.nc/fr" className="btn btn-aircalin" rel="nofollow noreferrer" target="_blank">Je réserve !</a>
           </div>
         </section>
-        <section className="container mt mb">
-          <h3 className="title">Des paysages à couper le soufle !</h3>
+        <section className="container p-relative">
           <Carousel />
         </section>
       </main>

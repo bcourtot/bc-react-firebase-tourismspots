@@ -36,6 +36,8 @@ footer {
     align-items: center;
     display: flex;
     justify-content: center;
+    position: absolute;
+    bottom: 0;
 }
 
 .footer-logobox {

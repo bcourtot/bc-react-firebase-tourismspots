@@ -1,7 +1,5 @@
 html {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
     overflow-x: hidden;
 }
 
@@ -44,4 +42,8 @@ ul {
 
 p {
     font-size: 0.8rem;
+}
+
+.text-dark {
+    color: #2c2c2c;
 }

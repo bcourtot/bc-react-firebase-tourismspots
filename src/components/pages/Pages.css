@@ -39,13 +39,17 @@ blockquote p::after {
     height: 50vh;
 }
 
+.h-25 {
+    height: 25vh;
+}
+
 /* Cta Home */
 .bg-image-book {
     background-image: linear-gradient(black, black), url('../../../public/img/newcaledonia5.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    background-blend-mode: saturation;
+    background-blend-mode: soft-light;
 }
 
 .home-cta {
@@ -56,9 +60,15 @@ blockquote p::after {
     line-height: 1;
 }
 
+.home-cta-title {
+    font-weight: 400;
+}
+
 .home-cta-span {
     font-size: 4.9rem;
+    font-weight: 700;
 }
+
 
 .btn {
     color: snow;
@@ -84,4 +94,90 @@ blockquote p::after {
 
 .btn-danger {
     background-color: tomato;
+}
+
+/* Auth Pages and forms */
+#main {
+    width: 20vw;
+    margin: 40px auto;
+    padding: 25px 28px;
+    background: snow;
+    border-radius: 4px;
+    border: 1px solid rgb(236, 231, 231);
+}
+
+.input-parent {
+    display: block;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #a4a4a4;
+}
+
+.input-parent input,
+.input-parent select,
+.input-parent textarea {
+    padding: 10px 8px;
+    width: 100%;
+    font-size: 16px;
+    background: #e0e0e0;
+    border: none;
+    color: #2e2e2e;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+
+.input-parent input:focus {
+    box-shadow: 0px 0px 0px 1px #0087ff;
+}
+
+button {
+    padding: 10px 18px;
+    font-size: 15px;
+    background: #1a3969;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    color: #f4f4f4;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:focus {
+    box-shadow: 0px 0px 0px 3px black;
+}
+
+.gap {
+    gap: 2rem;
+}
+
+/* List view */
+
+.p-rel {
+    position: relative;
+}
+
+.p-absolute {
+    position: absolute;
+}
+
+.list-style-none {
+    list-style-type: none;
+}
+
+.spot-card-info {
+    background-color: #f4f4f4;
+    bottom: 3px;
+    left: 0px;
+    width: -webkit-fill-available;
+    padding: 2px 20px;
 }

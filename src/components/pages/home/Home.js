@@ -1,15 +1,13 @@
 import Carousel from '../../partials/Carousel';
 import '../Pages.css';
 
-
-
 const Home = () =>
 {
   return (
     <>
       <main>
         <section>
-          <h1 className="title d-flex">Découvrez une île extraordinaire !</h1>
+          <h1 className="title d-flex text-dark">À la découverte d'une île extraordinaire !</h1>
         </section>
         <section className="d-flex align-center">
           <figure>
@@ -25,7 +23,7 @@ const Home = () =>
         </section>
         <section className="d-flex mt">
           <div className="bg-image-book align-center w-100 h-50 home-cta">
-            <h3 className="title">Réservez tout de suite votre <br></br><span className="home-cta-span">billet d'avion !</span></h3>
+            <h3 className="title home-cta-title">Réservez tout de suite votre <br></br><span className="home-cta-span">billet d'avion !</span></h3>
             <a href="https://www.aircalin.nc/fr" className="btn btn-aircalin" rel="nofollow noreferrer" target="_blank">Je réserve !</a>
           </div>
         </section>

@@ -2,10 +2,11 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/home/Home";
 import List from "./components/pages/spots/List";
+import MySpots from './components/pages/spots/MySpots';
 import Create from "./components/pages/spots/Create";
-import Update from "./components/pages/spots/Update";
 import Layout from "./components/layout/Layout";
-
+import Login from './components/pages/auth/Login';
+import Register from './components/pages/auth/Register';
 
 export default function App()
 {
@@ -15,8 +16,10 @@ export default function App()
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="spots" element={<List />} />
+          <Route path="myspots" element={<MySpots />} />
           <Route path="create" element={<Create />} />
-          <Route path="update" element={<Update />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
         </Route>
       </Routes>
     </BrowserRouter>

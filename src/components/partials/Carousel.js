@@ -37,8 +37,12 @@ const Carousel = () =>
                 <Fade>
                     {fadeImages.map((fadeImage, index) => (
                         <div className="each-fade" key={index}>
-                            <div className="image-container">
-                                <img src={fadeImage.url} className="w-100" alt={fadeImage.caption} />
+                            <div className="image-container w-100 h-50" style={{
+                                backgroundImage: `url(${fadeImage.url})`,
+                                backgroundRepeat: 'no-repeat',
+                                backgroundPosition: 'center center',
+                                backgroundSize: 'cover',
+                            }}>
                             </div>
                         </div>
                     ))}

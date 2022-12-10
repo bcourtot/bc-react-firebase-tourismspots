@@ -18,16 +18,16 @@ const Header = () =>
               <Link to="/spots" className="header-link">Spots</Link>
             </li>
             <li>
+              <Link to="/myspots" className="header-link">Mes Spots</Link>
+            </li>
+            <li>
               <Link to="/create" className="header-link">Ajouter un spot</Link>
             </li>
             <li>
-              <Link to="/update" className="header-link">Modifier un spot</Link>
+              <Link to="/register" className="header-link">Créer un compte</Link>
             </li>
             <li>
-              <Link to="" className="header-link">Créer un compte</Link>
-            </li>
-            <li>
-              <Link to="" className="header-link">Se connecter</Link>
+              <Link to="/login" className="header-link">Se connecter</Link>
             </li>
             <li>
               <Link to="" className="header-link">Se déconnecter</Link>

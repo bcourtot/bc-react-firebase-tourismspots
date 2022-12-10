@@ -1,25 +1,29 @@
-
+import React from 'react'
+import '../Pages.css'
 
 const List = () =>
 {
   return (
     <>
       <main>
-        <div className="container">
-          <h1 className="title">Les meilleurs spots du Caillou !</h1>
-          <ul>
+        <section className="container">
+          <h1 className="title text-dark">Les meilleurs spots du Caillou !</h1>
+        </section>
+        <section className="spot-card">
+          <ul className="d-flex list-style-none">
             <li>
-              <div className="card d-flex">
-                <img alt="" src="./img/placeholder.jpg" width="256" />
-                <div>
+              <article className="card p-rel">
+                <img alt="new caledonia" src="./img/placeholder.jpg" width="256" />
+                <div className="spot-card-info p-absolute">
                   <h4>Catégorie du spot</h4>
                   <h3>Nom du spot</h3>
                   <p>Description du spot</p>
                 </div>
-              </div>
+              </article>
             </li>
           </ul>
-        </div>
+        </section>
+
       </main>
     </>
   );

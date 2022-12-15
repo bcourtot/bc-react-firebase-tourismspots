@@ -20,7 +20,7 @@ const Login = () =>
                             <input type="password" id="password" required />
                         </div>
 
-                        <button type="submit">Connexion</button>
+                        <button class="btn-classic" type="submit">Connexion</button>
                     </form>
                 </section>
             </main>

@@ -137,7 +137,7 @@ label {
     box-shadow: 0px 0px 0px 1px #0087ff;
 }
 
-button {
+.btn-classic {
     padding: 10px 18px;
     font-size: 15px;
     background: #1a3969;
@@ -148,11 +148,11 @@ button {
     transition: all 0.2s ease;
 }
 
-button:hover {
+.btn-classic:hover {
     opacity: 0.9;
 }
 
-button:focus {
+.btn-classic:focus {
     box-shadow: 0px 0px 0px 3px black;
 }
 
@@ -180,4 +180,16 @@ button:focus {
     left: 0px;
     width: -webkit-fill-available;
     padding: 2px 20px;
+}
+
+.btn-delete-spot {
+    position: absolute;
+    width: 2rem;
+    top: 0;
+    right: 0;
+    background-color: #f00020;
+    color: snow;
+    border: none;
+    padding: 0.5rem 0.25rem;
+    cursor: pointer;
 }

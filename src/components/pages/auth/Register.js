@@ -30,7 +30,7 @@ const Register = () =>
                             <input type="checkbox" id="rgpd" required />
                         </div>
 
-                        <button type="submit">Créer un compte</button>
+                        <button class="btn-classic" type="submit">Créer un compte</button>
                     </form>
                 </section>
             </main>

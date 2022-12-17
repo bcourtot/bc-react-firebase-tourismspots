@@ -1,13 +1,30 @@
 import React, { useEffect, useState } from "react";
 import SpotDataService from "../../../services/spot.services.js";
 import '../Pages.css'
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 
 const List = ({ getSpotId }) =>
 {
   const [ spots, setSpots ] = useState([]);
+  const [ user, setUser ] = useState(null);
+
   useEffect(() =>
   {
     getSpots();
+    const checkUser = firebase.auth().onAuthStateChanged(function (user)
+    {
+      console.log("user: ", user);
+      if (user)
+      {
+        setUser(user);
+      } else
+      {
+        setUser(null);
+      }
+    });
+
+    return () => checkUser();
   }, []);
 
   const getSpots = async () =>
@@ -37,7 +54,7 @@ const List = ({ getSpotId }) =>
               return (
                 <li>
                   <article className="card p-rel">
-                    <button class="btn-delete-spot" onClick={(e) => deleteHandler(doc.id)}>X</button>
+                    {user && <button className="btn-delete-spot" onClick={(e) => deleteHandler(doc.id)}>X</button>}
                     <img alt="new caledonia" src="./img/placeholder.jpg" width="256" />
                     <div className="spot-card-info p-absolute">
                       <h4>{doc.province}</h4>

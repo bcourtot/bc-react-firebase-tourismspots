@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, Link } from "react-router-dom";
 import logo from "../../../logo.png";
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 
 
 
@@ -14,6 +14,7 @@ const Header = () =>
   {
     const unsubscribe = firebase.auth().onAuthStateChanged(function (user)
     {
+      console.log("user: ", user);
       if (user)
       {
         setUser(user);
@@ -41,16 +42,16 @@ const Header = () =>
               <Link to="/spots" className="header-link">Spots</Link>
             </li>
             <li>
-              <li>
-                {user && <Link to="/create" className="header-link">Ajouter un spot</Link>}
-              </li>
+              {user && <Link to="/create" className="header-link">Ajouter un spot</Link>}
+            </li>
+            <li>
+              {user && <Link onClick={() => firebase.auth().signOut()} className="header-link">Se déconnecter</Link>}
+            </li>
+            <li>
               {!user && <Link to="/register" className="header-link">Créer un compte</Link>}
             </li>
             <li>
               {!user && <Link to="/login" className="header-link">Se connecter</Link>}
-            </li>
-            <li>
-              {user && <Link onClick={() => firebase.auth().signOut()} className="header-link">Se déconnecter</Link>}
             </li>
           </ul>
         </nav>

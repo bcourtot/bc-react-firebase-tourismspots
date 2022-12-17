@@ -1,6 +1,6 @@
 {
   "name": "bc-react-tourismspots",
-  "version": "0.1.0",
+  "version": "0.1.0" ,
   "private": true,
   "dependencies": {
     "@react-firebase/auth": "^0.2.10",

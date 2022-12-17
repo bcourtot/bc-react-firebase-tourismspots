@@ -3,7 +3,7 @@ import { collection, getDocs, getDoc, addDoc, updateDoc, deleteDoc, doc } from "
 
 
 const spotCollectionRef = collection(db, "spots");
-const provinceCollectionRef = collection(db, "provinces");
+
 
 class SpotDataService
 {
@@ -34,6 +34,8 @@ class SpotDataService
         const spotDoc = doc(db, "spots", id);
         return getDoc(spotDoc);
     };
+
+
 }
 
 export default new SpotDataService();

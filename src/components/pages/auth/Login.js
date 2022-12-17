@@ -1,13 +1,27 @@
-import React from 'react'
-import '../Pages.css'
+import React from 'react';
+import '../Pages.css';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
 
 const Login = () =>
 {
+    const handleSubmit = (event) =>
+    {
+        event.preventDefault();
+        const email = event.target.elements.email.value;
+        const password = event.target.elements.password.value;
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error)
+        {
+            console.error(error);
+        });
+    };
+
     return (
         <>
             <main>
                 <section className="container">
-                    <form action="#!" id="main">
+                    <form onSubmit={handleSubmit} id="main">
                         <h2 className="title d-flex text-dark">Se connecter</h2>
 
                         <div className="input-parent">

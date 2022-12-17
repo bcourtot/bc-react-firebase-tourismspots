@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SpotDataService from "../../../services/spot.services.js";
 import { Alert } from "react-bootstrap";
 import '../Pages.css';
@@ -28,6 +28,7 @@ const Create = ({ id, setSpotId }) =>
             latitude,
             province,
         };
+
         console.log(newSpot);
 
         try
@@ -55,37 +56,10 @@ const Create = ({ id, setSpotId }) =>
 
     };
 
-    const editHandler = async () =>
-    {
-        setMessage("");
-        try
-        {
-            const docSnap = await SpotDataService.getBook(id);
-            console.log("the record is :", docSnap.data());
-            setName(docSnap.data().name);
-            setDescription(docSnap.data().description);
-            setLongitude(docSnap.data().longitude);
-            setLatitude(docSnap.data().latitude);
-            setProvince(docSnap.data().province);
-        } catch (err)
-        {
-            setMessage({ error: true, msg: err.message });
-        }
-    };
-
     const handleChange = (event) =>
     {
         setProvince(event.target.value)
     }
-
-    useEffect(() =>
-    {
-        console.log("Id : ", id);
-        if (id !== undefined && id !== "")
-        {
-            editHandler();
-        }
-    }, [ id ]);
 
 
     return (

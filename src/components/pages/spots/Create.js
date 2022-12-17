@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SpotDataService from "../../../services/spot.services.js";
+import { Alert } from "react-bootstrap";
 import '../Pages.css';
 
 const Create = ({ id, setSpotId }) =>
@@ -8,14 +9,14 @@ const Create = ({ id, setSpotId }) =>
     const [ description, setDescription ] = useState("");
     const [ longitude, setLongitude ] = useState("");
     const [ latitude, setLatitude ] = useState("");
-    const [ categories_id, setCategoryId ] = useState("");
+    const [ province, setProvince ] = useState("");
     const [ message, setMessage ] = useState({ error: false, msg: "" });
 
     const handleSubmit = async (e) =>
     {
         e.preventDefault();
         setMessage("");
-        if (name === "" || description === "" || longitude === "" || latitude === "" || categories_id === "")
+        if (name === "" || description === "" || longitude === "" || latitude === "" || province === "")
         {
             setMessage({ error: true, msg: "Remplissez les champs s'il vous plait" });
             return;
@@ -25,7 +26,7 @@ const Create = ({ id, setSpotId }) =>
             description,
             longitude,
             latitude,
-            categories_id,
+            province,
         };
         console.log(newSpot);
 
@@ -50,7 +51,7 @@ const Create = ({ id, setSpotId }) =>
         setDescription("");
         setLongitude("");
         setLatitude("");
-        setCategoryId("");
+        setProvince("");
 
     };
 
@@ -65,7 +66,7 @@ const Create = ({ id, setSpotId }) =>
             setDescription(docSnap.data().description);
             setLongitude(docSnap.data().longitude);
             setLatitude(docSnap.data().latitude);
-            setCategoryId(docSnap.data().categories_id);
+            setProvince(docSnap.data().province);
         } catch (err)
         {
             setMessage({ error: true, msg: err.message });
@@ -74,7 +75,7 @@ const Create = ({ id, setSpotId }) =>
 
     const handleChange = (event) =>
     {
-        setCategoryId(event.target.value)
+        setProvince(event.target.value)
     }
 
     useEffect(() =>
@@ -91,17 +92,26 @@ const Create = ({ id, setSpotId }) =>
         <>
             <main>
                 <section className="container">
+                    {message?.msg && (
+                        <Alert
+                            variant={message?.error ? "danger" : "success"}
+                            dismissible
+                            onClose={() => setMessage("")}
+                        >
+                            {message?.msg}
+                        </Alert>
+                    )}
                     <form onSubmit={handleSubmit} id="main">
                         <h2 className="title d-flex text-dark">Créer un spot</h2>
 
                         <div className="d-flex gap">
                             <div className="input-parent">
                                 <label for="categories">Catégorie</label>
-                                <select value={categories_id} onChange={handleChange} name="categories_id" id="categories" >
+                                <select value={province} onChange={handleChange} name="province" id="province" >
                                     <option value="empty">---</option>
-                                    <option value="1">Province Sud</option>
-                                    <option value="2">Province Nord</option>
-                                    <option value="3">Province Iles</option>
+                                    <option value="Province Sud">Province Sud</option>
+                                    <option value="Province Nord">Province Nord</option>
+                                    <option value="Province Iles">Province Iles</option>
                                 </select>
                             </div>
                             <div className="input-parent">

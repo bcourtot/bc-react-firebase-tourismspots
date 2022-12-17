@@ -31,7 +31,7 @@ const List = ({ getSpotId }) =>
           <h1 className="title text-dark">Les meilleurs spots du Caillou !</h1>
         </section>
         <section className="spot-card">
-          <ul className="d-flex list-style-none">
+          <ul className="d-flex list-style-none spots">
             {spots.map((doc, index) =>
             {
               return (
@@ -40,9 +40,10 @@ const List = ({ getSpotId }) =>
                     <button class="btn-delete-spot" onClick={(e) => deleteHandler(doc.id)}>X</button>
                     <img alt="new caledonia" src="./img/placeholder.jpg" width="256" />
                     <div className="spot-card-info p-absolute">
-                      <h4>{doc.categories_id}</h4>
+                      <h4>{doc.province}</h4>
                       <h3>{doc.name}</h3>
                       <p>{doc.description}</p>
+                      <p> <i class="fa-solid fa-location-dot"></i> {doc.longitude}, {doc.latitude}</p>
                     </div>
                   </article>
                 </li>

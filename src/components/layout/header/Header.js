@@ -18,9 +18,6 @@ const Header = () =>
               <Link to="/spots" className="header-link">Spots</Link>
             </li>
             <li>
-              <Link to="/myspots" className="header-link">Mes Spots</Link>
-            </li>
-            <li>
               <Link to="/create" className="header-link">Ajouter un spot</Link>
             </li>
             <li>
